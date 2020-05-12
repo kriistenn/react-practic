@@ -1,7 +1,7 @@
 import React from 'react';
-import Title from './Title'
+import Title from './Title';
 import './App.css';
-import ContactList from './ContactList'
+import ContactList from './ContactList';
 
 function App() {
   const contactsArray = [
@@ -29,7 +29,7 @@ function App() {
   ]
   return (
     <div className="App">
-      <Title title= "Contact List" />
+      {/* <Title title= "Contact List" /> */}
       <ContactList contacts = {contactsArray} />
     </div>
   );

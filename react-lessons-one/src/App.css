@@ -1,0 +1,12 @@
+.contact {
+  height: 150px;
+  background-color: rgb(196, 185, 171);
+  margin-bottom: 10px;
+}
+
+.photo{
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  background: aqua;
+}
