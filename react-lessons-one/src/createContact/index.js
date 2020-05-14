@@ -1,47 +1,46 @@
 import React from 'react';
+// import {contactsArray} from './constans'
 
-function CreateContactForm () {
+function CreateContactForm ({onSave}) {
     const [name, setName] = React.useState('')
     const [number, setNumber] = React.useState('')
     const [address, setAddress] = React.useState('')
     const [img, setImg] = React.useState('')
 
-    const handChangeName = (e) => {setName(e.target.value)}
-    const handChangeNumber = (e) => {setNumber(e.target.value)}
-    const handChangeAddress = (e) => {setAddress(e.target.value)}
-    const handChangeImg = (e) => {setImg(e.target.value)}
 
-
-    const handleSend = () => console.log({name, number, address, img })
-    
+    const handleSend = ((e) => {
+        e.preventDefault()
+        const data = {name, number, address, img}
+        onSave(data)
+    })
     return (
         <form className="form">
             
             <input 
             className="form-input" 
             value={name}
-            onChange = {handChangeName}
+            onChange = {(e) =>setName(e.target.value)}
             type="text"
             placeholder="Name"/>
             
             <input 
             className="form-input" 
             value={number}
-            onChange = {handChangeNumber}
+            onChange = {(e) => setNumber(e.target.value)}
             type="text"
             placeholder="Number Phone"/>
             
             <input 
             className="form-input" 
             value={address}
-            onChange = {handChangeAddress}
+            onChange = { (e) => setAddress(e.target.value)}
             type="text"
             placeholder="Address"/>
             
             <input 
             className="form-input"
             value={img} 
-            onChange = {handChangeImg}
+            onChange = {(e) => setImg(e.target.value)}
             type="text"
             placeholder="the link to the phone"/>
 
