@@ -7,7 +7,6 @@ import ContactList from './ContactList';
 
 function App() {
   const [newContact, setNewContact] = React.useState({})
-  console.log('newContact', newContact)
 
   const handeSave = (data) => {
     setNewContact(data)

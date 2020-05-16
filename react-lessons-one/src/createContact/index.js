@@ -1,5 +1,4 @@
 import React from 'react';
-// import {contactsArray} from './constans'
 
 function CreateContactForm ({onSave}) {
     const [name, setName] = React.useState('')

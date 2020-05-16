@@ -1,13 +1,16 @@
 import React from 'react';
 
 function ContactItem(props) {
+
+  const {  name, phone, address, imgSrc } = props
+
   return (
     <div className="contact-item">
-      <img src={props.imgSrc} alt="avatar"/>
+      <img src={imgSrc} alt="avatar"/>
       <div className="info">
-        <div className="name">{props.name}</div>
-        <div className="phone">{props.phone}</div>
-        <div className="address">{props.address}</div>
+        <div className="name">{name}</div>
+        <div className="phone">{phone}</div>
+        <div className="address">{address}</div>
       </div>
     </div>
   )
