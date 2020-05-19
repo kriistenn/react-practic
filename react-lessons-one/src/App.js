@@ -6,16 +6,20 @@ import {contactsArray} from './constans'
 import ContactList from './ContactList';
 
 function App() {
-  const [newContact, setNewContact] = React.useState({})
+  const [contacts, setContacts] = React.useState([])
 
   const handeSave = (data) => {
-    setNewContact(data)
+    setContacts([...contacts, data])
   }
+
+
   return (
     <div className="App">
       <Title title= "Contact List" />
-      <CreateContactForm onSave={handeSave}/>
-      <ContactList contacts = {[...contactsArray, newContact]} />
+      <CreateContactForm
+      onSave={handeSave}
+      />
+      <ContactList contacts = {contacts} />
     </div>
   );
 }

@@ -1,24 +1,27 @@
 import React from 'react';
 
-function CreateContactForm ({onSave}) {
+function CreateContactForm (props) {
     const [name, setName] = React.useState('')
     const [number, setNumber] = React.useState('')
     const [address, setAddress] = React.useState('')
     const [img, setImg] = React.useState('')
 
 
-    const handleSend = ((e) => {
+    const handleSave = ((e) => {
         e.preventDefault()
-        const data = {name, number, address, img}
-        onSave(data)
+        const data = {name, number, address, imageSrc: img }
+        props.onSave(data)
     })
+
+
+
     return (
         <form className="form">
             
             <input 
             className="form-input" 
             value={name}
-            onChange = {(e) =>setName(e.target.value)}
+            onChange = {(e) => setName(e.target.value)}
             type="text"
             placeholder="Name"/>
             
@@ -43,7 +46,7 @@ function CreateContactForm ({onSave}) {
             type="text"
             placeholder="the link to the phone"/>
 
-            <button onClick={handleSend} type="submit">Create</button>
+            <button onClick={handleSave} type="submit">Create</button>
         </form>
     )
 }
